@@ -1,5 +1,11 @@
 <h1>Blockchain Transfer Transactions</h1>
 
+<% if @api_available %>
+  <p style="color: green;">New transactions have been fetched.</p>
+<% else %>
+  <p style="color: red;">Showing only historical transactions as API is down.</p>
+<% end %>
+
 <table>
   <thead>
     <tr>
