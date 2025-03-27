@@ -1,2 +1,22 @@
-<h1>Transactions#index</h1>
-<p>Find me in app/views/transactions/index.html.erb</p>
+<h1>Blockchain Transfer Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sender</th>
+      <th>Receiver</th>
+      <th>Deposit</th>
+      <th>Block No.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transactions.each do |tx| %>
+      <tr>
+        <td><%= tx.sender %></td>
+        <td><%= tx.receiver %></td>
+        <td><%= tx.deposit %></td>
+        <td><%= tx.height %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
