@@ -1,5 +1,5 @@
-require 'test_helper'
-require 'webmock/minitest'
+require "test_helper"
+require "webmock/minitest"
 
 class FetchTransactionsServiceTest < ActiveSupport::TestCase
   setup do
@@ -25,7 +25,7 @@ class FetchTransactionsServiceTest < ActiveSupport::TestCase
     stub_request(:get, /mock.pstmn.io/)
       .to_return(status: 200, body: mock_response)
 
-    assert_difference('Transaction.count', 1) do
+    assert_difference("Transaction.count", 1) do
       FetchTransactionsService.call
     end
 
@@ -57,7 +57,7 @@ class FetchTransactionsServiceTest < ActiveSupport::TestCase
     stub_request(:get, /mock.pstmn.io/)
       .to_return(status: 200, body: mock_response)
 
-    assert_no_difference('Transaction.count') do
+    assert_no_difference("Transaction.count") do
       FetchTransactionsService.call
     end
   end
@@ -66,7 +66,7 @@ class FetchTransactionsServiceTest < ActiveSupport::TestCase
     stub_request(:get, /mock.pstmn.io/)
       .to_return(status: 200, body: [].to_json)
 
-    assert_no_difference('Transaction.count') do
+    assert_no_difference("Transaction.count") do
       FetchTransactionsService.call
     end
   end
@@ -75,7 +75,7 @@ class FetchTransactionsServiceTest < ActiveSupport::TestCase
     stub_request(:get, /mock.pstmn.io/)
       .to_return(status: 500, body: "Internal Server Error")
 
-    assert_no_difference('Transaction.count') do
+    assert_no_difference("Transaction.count") do
       FetchTransactionsService.call
     end
   end
