@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sender: MyString
+  receiver: MyString
+  deposit: 9.99
+  block_hash: MyString
+  hash_key: MyString
+  height: 1
+
+two:
+  sender: MyString
+  receiver: MyString
+  deposit: 9.99
+  block_hash: MyString
+  hash_key: MyString
+  height: 1
